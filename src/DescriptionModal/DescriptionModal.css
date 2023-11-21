@@ -1,0 +1,7 @@
+.descriptionModal {
+    z-index: 2;
+    padding: 10px;
+    position: fixed;
+    width: 300px;
+    background-color: aliceblue;
+}
