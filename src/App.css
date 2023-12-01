@@ -10,3 +10,26 @@
   max-width: 200px;
   background-color: whitesmoke
 }
+
+.infoBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #ffe1af;
+  width: 400px;
+  padding: 15px;
+  border-left: 4px solid black;
+}
+
+.header {
+  position: absolute;
+  font-size: 50px;
+  color: whitesmoke;
+  width: 250px;
+  top: 0;
+  left: 10px;
+  height: 250px;
+  text-align: center;
+  font-family: 'Alkatra';
+}
