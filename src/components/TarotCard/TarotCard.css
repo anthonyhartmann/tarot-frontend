@@ -1,13 +1,15 @@
 .cardBox {
+    position: relative;
     margin: 5px;
     border: 2px solid black;
     aspect-ratio: 2.75 / 4.75;
-    height: 20em;
+    height: 12em;
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
+    border-radius: 15px;
 }
 
 .cardBack {
@@ -18,4 +20,56 @@
 
 .upsideDown {
     transform:rotate(180deg);
+}
+
+.celtic-cross-1 {
+    left: 300%;
+    top: 20em;
+}
+
+.celtic-cross-2 {
+    z-index: 1;
+    left: 200%;
+    top: 20em;
+    transform:rotate(-90deg);
+}
+
+.celtic-cross-3 {
+    top: 2em;
+    left: 100%;
+}
+
+.celtic-cross-4 {
+    top: 38em;
+}
+
+.celtic-cross-5 {
+    top: 20em;
+    right: 250%;
+}
+
+.celtic-cross-6 {
+    top: 20em;
+    right: 50%;
+}
+
+.celtic-cross-7 {
+    left: 150%;
+}
+
+.celtic-cross-8 {
+    left: 50%;
+    top: 100%;
+    top: 15em;
+}
+
+.celtic-cross-9 {
+    right: 50%;
+    top: 200%;
+    top: 30em;
+}
+
+.celtic-cross-10 {
+    right: 150%;
+    top: 45em;
 }
