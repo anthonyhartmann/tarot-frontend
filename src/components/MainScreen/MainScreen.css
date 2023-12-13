@@ -1,0 +1,28 @@
+.main-screen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stepTitle {
+  text-align: center;
+  text-overflow: wrap;
+  max-width: 200px;
+  background-color: whitesmoke;
+}
+
+.head {
+  position: absolute;
+  font-size: 40px;
+  color: whitesmoke;
+  width: 250px;
+  top: 0;
+  left: 10px;
+  height: 250px;
+  text-align: center;
+}
+
+.cardContainer {
+  min-height: 100%;
+  min-width: 100%;
+}
