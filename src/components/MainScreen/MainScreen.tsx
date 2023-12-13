@@ -31,7 +31,6 @@ const MainScreen: React.FC = () => {
   const textMap = new Map<Number, Card>();
   useEffect(() => {
     setLoading(true);
-    console.log("loading");
     fetch("/data").then((res) =>
       res.json().then((data) => {
         setData(data.map((instanceData: Card) => new Card(instanceData)));

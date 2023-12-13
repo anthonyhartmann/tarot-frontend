@@ -25,7 +25,6 @@ const TarotCard: React.FC<TarotCardProps> = (props) => {
     ".jpg";
 
   const handleFlip = (props: TarotCardProps) => {
-    console.log(card_img_path);
     if (props.step >= props.index) {
       setFaceDown(false);
       props.setActiveCardModal(props.index);
