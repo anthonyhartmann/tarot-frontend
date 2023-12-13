@@ -19,14 +19,12 @@ const TarotCard: React.FC<TarotCardProps> = (props) => {
   const card = props.card;
   const [faceDown, setFaceDown] = React.useState(true);
 
-  const positionClass = props.layout + "-" + (props.index + 1);
   const card_img_path =
     "/images/cards/" +
     props.card.name.toLowerCase().replaceAll(" ", "_") +
     ".jpg";
 
   const handleFlip = (props: TarotCardProps) => {
-    console.log(card_img_path);
     if (props.step >= props.index) {
       setFaceDown(false);
       props.setActiveCardModal(props.index);
@@ -34,7 +32,7 @@ const TarotCard: React.FC<TarotCardProps> = (props) => {
     }
   };
 
-  let cardClasses = `cardBox ${positionClass}`;
+  let cardClasses = `cardBox`;
   if (faceDown) {
     cardClasses += " cardBack";
   }
@@ -44,23 +42,21 @@ const TarotCard: React.FC<TarotCardProps> = (props) => {
   }
 
   return (
-    <div>
-      <div
-        className={cardClasses}
-        style={
-          faceDown
-            ? {}
-            : {
-                backgroundImage: `url(${card_img_path})`,
-                backgroundPosition: "center",
-                backgroundSize: "100%",
-              }
-        }
-        onClick={() =>
-          faceDown ? handleFlip(props) : props.setActiveCardModal(props.index)
-        }
-      />
-    </div>
+    <div
+      className={cardClasses}
+      style={
+        faceDown
+          ? { color: "green" }
+          : {
+              backgroundImage: `url(${card_img_path})`,
+              backgroundPosition: "center",
+              backgroundSize: "100%",
+            }
+      }
+      onClick={() =>
+        faceDown ? handleFlip(props) : props.setActiveCardModal(props.index)
+      }
+    ></div>
   );
 };
 
