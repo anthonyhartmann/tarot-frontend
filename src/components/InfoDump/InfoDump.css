@@ -1,7 +1,6 @@
 .infoBox {
   position: "relative";
   float: right;
-  background-color: #ffe1af;
   border-left: 4px solid black;
   max-width: 30%;
   padding: 0 20px 0 20px;
@@ -9,7 +8,13 @@
   transition-timing-function: ease-in-out;
   margin: 0;
   height: 100vh;
-  overflow-y: scroll;
+}
+
+.infoBoxStyle {
+  background-color: #ffe1af;
   font-family: "OldSchoolAdventures";
   color: #7e4747;
+  overflow-y: scroll;
+  border: none;
+  outline: none;
 }

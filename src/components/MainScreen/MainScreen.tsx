@@ -5,7 +5,9 @@ import TarotCard from "../TarotCard/TarotCard";
 import { RotatingTriangles } from "react-loader-spinner";
 import "./MainScreen.css";
 import TarotContainer from "../TarotContainer/TarotContainer";
-import { Box } from "@mui/material";
+import { Box, Checkbox } from "@mui/material";
+import ToggleOffIcon from "@mui/icons-material/ToggleOff";
+import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 
 const STEP_NUMBER_MAP = [
   "the querent",
@@ -28,6 +30,7 @@ const MainScreen: React.FC = () => {
   const [layout, setLayout] = React.useState("celtic-cross");
   const [loading, setLoading] = React.useState(false);
   const [activeCard, setActiveCard] = React.useState<Card | null>(null);
+  const [predictMode, setPredictMode] = React.useState<boolean>(false);
   const textMap = new Map<Number, Card>();
   useEffect(() => {
     setLoading(true);
@@ -76,8 +79,27 @@ const MainScreen: React.FC = () => {
           <div className="head">
             {"Step " + step + ":\n" + STEP_NUMBER_MAP[step]}
           </div>
+          <div
+            style={{
+              alignSelf: "flex-end",
+              marginLeft: ".5em",
+              marginBottom: "0px",
+              color: "#b59e19",
+            }}
+          >
+            Predict Mode
+            <Checkbox
+              onChange={(event) => setPredictMode(event.target.checked)}
+              sx={{ marginTop: "0px" }}
+              icon={<ToggleOffIcon sx={{ fontSize: "4em" }} />}
+              checkedIcon={
+                <ToggleOnIcon sx={{ fontSize: "4em", color: "#b59e19" }} />
+              }
+            />
+          </div>
           <TarotContainer cards={cardData} />
           <InfoDump
+            predictMode={predictMode}
             visible={activeCardModal != -1}
             card={activeCard}
             onClose={() => setActiveCardModal(-1)}

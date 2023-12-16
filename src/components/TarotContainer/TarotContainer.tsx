@@ -1,7 +1,9 @@
 import React from "react";
 import { Card } from "../../types";
-import { Box } from "@mui/material";
+import { Box, Checkbox } from "@mui/material";
 
+import ToggleOffIcon from "@mui/icons-material/ToggleOff";
+import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 type TarotContainerProps = {
   cards: JSX.Element[];
 };

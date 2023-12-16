@@ -1,9 +1,11 @@
 import React from "react";
 import { Card } from "../../types";
 import CloseIcon from "@mui/icons-material/Close";
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import "./InfoDump.css";
 
 type InfoDumpProps = {
+  predictMode: boolean;
   card: Card | null;
   visible: boolean;
   onClose: () => void;
@@ -23,7 +25,7 @@ const InfoDump: React.FC<InfoDumpProps> = (props) => {
   }
   return (
     <div
-      className={"infoBox"}
+      className="infoBox infoBoxStyle"
       style={
         props.visible
           ? {
@@ -41,10 +43,24 @@ const InfoDump: React.FC<InfoDumpProps> = (props) => {
         fontSize="large"
       />
       <h1>{title}</h1>
-      <h2> Description </h2>
-      <p>{description}</p>
-      <h2> Associations </h2>
-      <p>{tags.join(", ")}</p>
+      {!props.predictMode && (
+        <div>
+          <h2> Description </h2>
+          <p>{description}</p>
+          <h2> Associations </h2>
+          <p>{tags.join(", ")}</p>
+        </div>
+      )}
+      {props.predictMode && (
+        <div>
+          <h2>Your Notes</h2>
+          <TextareaAutosize
+            className="infoBoxStyle"
+            minRows={30}
+            style={{ width: "90%", fontSize: "1em" }}
+          />
+        </div>
+      )}
     </div>
   );
 };
